@@ -6,7 +6,7 @@ Hands-on Jupyter notebooks exploring Python fundamentals and language mechanics.
 
 ---
 
-<img src="https://media.giphy.com/media/26u4b45b8KlgAB7iM/giphy.gif" alt="Python Coding" width="400" style="border-radius: 8px;" />
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXB1eXZ6Zmo5ZnM3dGZ0MDJhZ3BwczF3ZzBvMDV1ZWhsdXhzd3Z0diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUXCTpkqwLeh2SrZ4T/giphy.gif" alt="Python Coding" width="400" style="border-radius: 8px;" />
 
 <br/><br/>
 
