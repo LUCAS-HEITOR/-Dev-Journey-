@@ -43,42 +43,6 @@ Centralized hub documenting my daily coding journey, competitive programming, co
 └── 📁 Scripts/             # ⚡ Algorithms & scripts (C++, Python, Lua)
 ```
 
----
-
-## ⚡ Highlights & Quick Links
-
-- 🧩 **[Coding Challenges](Challenges/README.md)** — Track solutions and algorithm patterns in **[LeetCode](Challenges/Leetcode/README.md)**.
-- 📐 **[Mathematics Library](Material/Books/Math/README.md)** — Calculus, Algebra, and Discrete Math books.
-- 🔷 **[C++ Jupyter Notebooks](Material/Learning/Jupyter%20-%20C++/README.md)**:
-  - [`Basics.ipynb`](Material/Learning/Jupyter%20-%20C++/Basics.ipynb) — C++ fundamentals: I/O, variables, conditionals, loops, functions, vectors, and strings.
-- 🐍 **[Python Jupyter Notebooks](Material/Learning/Jupyter%20-%20Python/README.md)**:
-  - [`Basics.ipynb`](Material/Learning/Jupyter%20-%20Python/Basics.ipynb) — Complete Python beginner guide (types, loops, lists, dicts, functions).
-  - [`Classes.ipynb`](Material/Learning/Jupyter%20-%20Python/Classes.ipynb) — OOP, dunder methods & inheritance.
-  - [`Decorator.ipynb`](Material/Learning/Jupyter%20-%20Python/Decorator.ipynb) — Function decorators & `@wraps`.
-  - [`Set.ipynb`](Material/Learning/Jupyter%20-%20Python/Set.ipynb) — Set operations & $O(1)$ lookups.
-
----
-
-## 🛠️ Quick Start
-
-```bash
-# Clone
-git clone https://github.com/LUCAS-HEITOR/-Dev-Journey-.git
-cd -Dev-Journey-
-
-# Python & Jupyter
-python -m venv venv && .\venv\Scripts\activate
-pip install jupyterlab && jupyter lab
-
-# Compile C++
-g++ -std=c++20 "Scripts/C++/Algorithms/HelloWorld.cpp" -o HelloWorld && ./HelloWorld
-
-# Run Lua
-lua "Scripts/Lua/Algorithms/HelloWorld.lua"
-```
-
----
-
 ## 👤 Author
 
 <div align="center">
