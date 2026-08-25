@@ -35,6 +35,4 @@ Every challenge is approached with a focus on:
 
 <div align="center">
 
-[⬅️ Back to Main Repository](../README.md)
-
 </div>
