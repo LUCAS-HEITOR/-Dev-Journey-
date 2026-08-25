@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# C / C++
+*.o
+*.obj
+*.exe
+*.out
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+
+# Lua
+*.luac
+lua_modules/
+
+# Books & Heavy Files
+Books/
+Material/Books/
+*.pdf
+
+# IDEs & Operating System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets & Temporary Files
+.env
+*.log
+*.tmp
+

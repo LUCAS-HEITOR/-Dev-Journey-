@@ -1,0 +1,91 @@
+{
+    "workbench.colorTheme": "Bearded Theme feat. WebDevCody",
+    "workbench.iconTheme": "helium-icon-theme",
+    "workbench.productIconTheme": "bongocat",
+    "window.zoomLevel": 0,
+    "editor.fontSize": 15,
+    "editor.fontFamily": "JetBrains Mono, 'Courier New'",
+    "editor.fontLigatures": true,
+    "editor.lineHeight": 1.6,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.minimap.enabled": true,
+    "editor.minimap.scale": 1,
+    "editor.roundedSelection": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.scrollBeyondLastLine": false,
+    "editor.inlineSuggest.enabled": false,
+    "editor.suggestFontSize": 13,
+    "editor.wordWrap": "on",
+    "editor.trimAutoWhitespace": true,
+    "editor.accessibilitySupport": "off",
+    "workbench.startupEditor": "none",
+    "workbench.editor.closeOnFileDelete": true,
+    "workbench.editor.enablePreview": true,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "explorer.compactFolders": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "files.associations": {
+        "*.cu": "cpp",
+        "*.cuh": "cpp"
+    },
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontFamily": "JetBrains Mono",
+    "terminal.integrated.lineHeight": 1.5,
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.enablePersistentSessions": true,
+    "code-runner.executorMap": {
+        "python": "clear ; python -u",
+        "javascript": "node",
+        "cpp": "g++ -o $dir\\$fileNameWithoutExt.exe $file && $dir\\$fileNameWithoutExt.exe"
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.ignoreSelection": true,
+    "[cpp]": {
+        "editor.inlineSuggest.enabled": false,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.rulers": [
+            79,
+            120
+        ]
+    },
+    "[sql]": {
+        "editor.formatOnSave": true
+    },
+    "[json]": {
+        "editor.formatOnSave": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/build": true,
+        "**/.git": true,
+        "**/CMakeFiles": true
+    },
+    "files.exclude": {
+        "**/node_modules": true,
+        "**/.git": true,
+        "**/CMakeLists.txt": false
+    },
+    "github.copilot.enable": {
+        "*": false
+    },
+    "extensions.autoUpdate": "on",
+    "update.mode": "start",
+    "telemetry.telemetryLevel": "off"
+}
