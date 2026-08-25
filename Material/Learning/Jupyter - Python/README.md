@@ -3,9 +3,6 @@
 # 🐍 Python Interactive Notebooks
 
 Hands-on Jupyter notebooks exploring Python fundamentals and language mechanics.
-
----
-
 <br/><br/>
 
 ### 📓 Available Notebooks
