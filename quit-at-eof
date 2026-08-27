@@ -1,0 +1,1957 @@
+warning: in the working copy of 'Material/Learning/Jupyter - Python/Basics.ipynb', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/Material/Learning/Jupyter - C++/Basics.ipynb b/Material/Learning/Jupyter - C++/Basics.ipynb[m
+[1mdeleted file mode 100644[m
+[1mindex 02bd7bc..0000000[m
+[1m--- a/Material/Learning/Jupyter - C++/Basics.ipynb[m	
+[1m+++ /dev/null[m
+[36m@@ -1,573 +0,0 @@[m
+[31m-{[m
+[31m- "cells": [[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "# 🔷 C++ Basics — Interactive Notebook\n",[m
+[31m-    "\n",[m
+[31m-    "A beginner-friendly, cell-by-cell introduction to the C++ programming language.\n",[m
+[31m-    "\n",[m
+[31m-    "## How to run this notebook\n",[m
+[31m-    "\n",[m
+[31m-    "This notebook requires the **xeus-cling** C++ kernel for Jupyter. Install it with:\n",[m
+[31m-    "\n",[m
+[31m-    "```bash\n",[m
+[31m-    "conda install xeus-cling -c conda-forge\n",[m
+[31m-    "```\n",[m
+[31m-    "\n",[m
+[31m-    "## Topics Covered\n",[m
+[31m-    "\n",[m
+[31m-    "1. Hello World & Output\n",[m
+[31m-    "2. Variables & Data Types\n",[m
+[31m-    "3. User Input\n",[m
+[31m-    "4. Arithmetic Operators\n",[m
+[31m-    "5. Conditionals (if / else)\n",[m
+[31m-    "6. Loops (for, while)\n",[m
+[31m-    "7. Functions\n",[m
+[31m-    "8. Arrays & Vectors\n",[m
+[31m-    "9. Strings"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 1. Hello World & Output\n",[m
+[31m-    "\n",[m
+[31m-    "In C++, we use `#include <iostream>` to access input/output.\n",[m
+[31m-    "\n",[m
+[31m-    "- `std::cout` prints text to the screen.\n",[m
+[31m-    "- `<<` is the **insertion operator** (sends data into the stream).\n",[m
+[31m-    "- `std::endl` or `\\n` creates a new line."[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "#include <iostream>"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "std::cout << \"Hello, World!\" << std::endl;"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "// You can chain multiple values with <<\n",[m
+[31m-    "std::cout << \"Line 1\" << std::endl;\n",[m
+[31m-    "std::cout << \"Line 2\" << std::endl;\n",[m
+[31m-    "std::cout << \"Result: \" << 10 + 5 << std::endl;"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 2. Variables & Data Types\n",[m
+[31m-    "\n",[m
+[31m-    "C++ is a **statically typed** language — every variable must have a declared type.\n",[m
+[31m-    "\n",[m
+[31m-    "| Type | What it stores | Example |\n",[m
+[31m-    "|------|---------------|--------|\n",[m
+[31m-    "| `int` | Whole numbers | `42` |\n",[m
+[31m-    "| `double` | Decimal numbers | `3.14` |\n",[m
+[31m-    "| `char` | Single character | `'A'` |\n",[m
+[31m-    "| `bool` | True or False | `true` |\n",[m
+[31m-    "| `std::string` | Text | `\"Hello\"` |"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "int age = 22;\n",[m
+[31m-    "double height = 1.75;\n",[m
+[31m-    "char grade = 'A';\n",[m
+[31m-    "bool is_student = true;\n",[m
+[31m-    "\n",[m
+[31m-    "std::cout << \"Age: \" << age << std::endl;\n",[m
+[31m-    "std::cout << \"Height: \" << height << \" m\" << std::endl;\n",[m
+[31m-    "std::cout << \"Grade: \" << grade << std::endl;\n",[m
+[31m-    "std::cout << \"Student? \" << is_student << std::endl; // 1 = true, 0 = false"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "// Strings require #include <string>\n",[m
+[31m-    "#include <string>\n",[m
+[31m-    "\n",[m
+[31m-    "std::string name = \"Lucas\";\n",[m
+[31m-    "std::cout << \"Name: \" << name << std::endl;\n",[m
+[31m-    "std::cout << \"Length: \" << name.length() << \" characters\" << std::endl;"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "### `auto` keyword\n",[m
+[31m-    "\n",[m
+[31m-    "Modern C++ can figure out the type automatically:"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "auto x = 10;       // int\n",[m
+[31m-    "auto pi = 3.14;    // double\n",[m
+[31m-    "auto msg = \"Hi!\";  // const char*\n",[m
+[31m-    "\n",[m
+[31m-    "std::cout << x << \", \" << pi << \", \" << msg << std::endl;"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "### Constants\n",[m
+[31m-    "\n",[m
+[31m-    "Use `const` for values that should **never change**:"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "const double PI = 3.14159265;\n",[m
+[31m-    "const int MAX_LIVES = 3;\n",[m
+[31m-    "\n",[m
+[31m-    "std::cout << \"PI = \" << PI << std::endl;\n",[m
+[31m-    "std::cout << \"Max Lives = \" << MAX_LIVES << std::endl;\n",[m
+[31m-    "\n",[m
+[31m-    "// PI = 5.0;  // ERROR! Cannot modify a const variable"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 3. User Input\n",[m
+[31m-    "\n",[m
+[31m-    "- `std::cin >> variable` reads input from the user.\n",[m
+[31m-    "- `std::getline(std::cin, str)` reads an entire line (including spaces).\n",[m
+[31m-    "\n",[m
+[31m-    "> ⚠️ **Note:** `std::cin` may not work interactively in all Jupyter C++ kernels. This section works best when compiled and run in the terminal."[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "// Example (works in terminal):\n",[m
+[31m-    "// int user_age;\n",[m
+[31m-    "// std::cout << \"Enter your age: \";\n",[m
+[31m-    "// std::cin >> user_age;\n",[m
+[31m-    "// std::cout << \"You are \" << user_age << \" years old.\" << std::endl;\n",[m
+[31m-    "\n",[m
+[31m-    "// Simulated for notebook:\n",[m
+[31m-    "int user_age = 25;\n",[m
+[31m-    "std::cout << \"Simulated input -> Age: \" << user_age << std::endl;"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 4. Arithmetic Operators\n",[m
+[31m-    "\n",[m
+[31m-    "| Operator | Meaning | Example |\n",[m
+[31m-    "|:---:|---|---|\n",[m
+[31m-    "| `+` | Addition | `5 + 3 = 8` |\n",[m
+[31m-    "| `-` | Subtraction | `5 - 3 = 2` |\n",[m
+[31m-    "| `*` | Multiplication | `5 * 3 = 15` |\n",[m
+[31m-    "| `/` | Division | `7 / 2 = 3` (integer!) |\n",[m
+[31m-    "| `%` | Modulus (remainder) | `7 % 2 = 1` |"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "int a = 10;\n",[m
+[31m-    "int b = 3;\n",[m
+[31m-    "\n",[m
+[31m-    "std::cout << \"a + b = \" << a + b << std::endl;\n",[m
+[31m-    "std::cout << \"a - b = \" << a - b << std::endl;\n",[m
+[31m-    "std::cout << \"a * b = \" << a * b << std::endl;\n",[m
+[31m-    "std::cout << \"a / b = \" << a / b << \" (integer division!)\" << std::endl;\n",[m
+[31m-    "std::cout << \"a % b = \" << a % b << \" (remainder)\" << std::endl;"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "// To get decimal division, at least one operand must be double\n",[m
+[31m-    "double result = 10.0 / 3;\n",[m
+[31m-    "std::cout << \"10.0 / 3 = \" << result << std::endl;"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 5. Conditionals (if / else)\n",[m
+[31m-    "\n",[m
+[31m-    "Control the flow of your program based on conditions.\n",[m
+[31m-    "\n",[m
+[31m-    "**Comparison Operators:** `==`, `!=`, `<`, `>`, `<=`, `>=`\n",[m
+[31m-    "\n",[m
+[31m-    "**Logical Operators:** `&&` (AND), `||` (OR), `!` (NOT)"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "int score = 85;\n",[m
+[31m-    "\n",[m
+[31m-    "if (score >= 90) {\n",[m
+[31m-    "    std::cout << \"Grade: A (Excellent!)\" << std::endl;\n",[m
+[31m-    "} else if (score >= 70) {\n",[m
+[31m-    "    std::cout << \"Grade: B (Great!)\" << std::endl;\n",[m
+[31m-    "} else {\n",[m
+[31m-    "    std::cout << \"Grade: C (Keep studying!)\" << std::endl;\n",[m
+[31m-    "}"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "// Logical operators\n",[m
+[31m-    "int temp = 25;\n",[m
+[31m-    "bool is_sunny = true;\n",[m
+[31m-    "\n",[m
+[31m-    "if (temp > 20 && is_sunny) {\n",[m
+[31m-    "    std::cout << \"Perfect day to go outside!\" << std::endl;\n",[m
+[31m-    "}\n",[m
+[31m-    "\n",[m
+[31m-    "if (temp < 0 || temp > 40) {\n",[m
+[31m-    "    std::cout << \"Extreme weather!\" << std::endl;\n",[m
+[31m-    "} else {\n",[m
+[31m-    "    std::cout << \"Temperature is normal.\" << std::endl;\n",[m
+[31m-    "}"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 6. Loops\n",[m
+[31m-    "\n",[m
+[31m-    "### `for` loop — when you know how many times to repeat"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "// Classic for loop: initialization; condition; update\n",[m
+[31m-    "for (int i = 1; i <= 5; i++) {\n",[m
+[31m-    "    std::cout << \"Count: \" << i << std::endl;\n",[m
+[31m-    "}"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "### `while` loop — repeat while a condition is true"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "int countdown = 5;\n",[m
+[31m-    "\n",[m
+[31m-    "while (countdown > 0) {\n",[m
+[31m-    "    std::cout << countdown << \"... \";\n",[m
+[31m-    "    countdown--;\n",[m
+[31m-    "}\n",[m
+[31m-    "std::cout << \"Liftoff! 🚀\" << std::endl;"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "### Range-based `for` loop (Modern C++)\n",[m
+[31m-    "\n",[m
+[31m-    "The cleanest way to iterate over a collection:"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "#include <vector>\n",[m
+[31m-    "\n",[m
+[31m-    "std::vector<std::string> languages = {\"C++\", \"Python\", \"Lua\"};\n",[m
+[31m-    "\n",[m
+[31m-    "for (const auto& lang : languages) {\n",[m
+[31m-    "    std::cout << \"I'm learning: \" << lang << std::endl;\n",[m
+[31m-    "}"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 7. Functions\n",[m
+[31m-    "\n",[m
+[31m-    "Functions let you organize and reuse code.\n",[m
+[31m-    "\n",[m
+[31m-    "```cpp\n",[m
+[31m-    "ReturnType function_name(ParameterType param) {\n",[m
+[31m-    "    // body\n",[m
+[31m-    "    return value;\n",[m
+[31m-    "}\n",[m
+[31m-    "```\n",[m
+[31m-    "\n",[m
+[31m-    "Use `void` when the function doesn't return anything."[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "int add(int a, int b) {\n",[m
+[31m-    "    return a + b;\n",[m
+[31m-    "}\n",[m
+[31m-    "\n",[m
+[31m-    "void greet(const std::string& name) {\n",[m
+[31m-    "    std::cout << \"Hello, \" << name << \"! Welcome to C++.\" << std::endl;\n",[m
+[31m-    "}"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "std::cout << \"3 + 7 = \" << add(3, 7) << std::endl;\n",[m
+[31m-    "greet(\"Lucas\");"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "// Function with default parameter\n",[m
+[31m-    "double calculate_area(double width, double height = 1.0) {\n",[m
+[31m-    "    return width * height;\n",[m
+[31m-    "}\n",[m
+[31m-    "\n",[m
+[31m-    "std::cout << \"Area (5 x 3): \" << calculate_area(5, 3) << std::endl;\n",[m
+[31m-    "std::cout << \"Area (5, default): \" << calculate_area(5) << std::endl;"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 8. Arrays & Vectors\n",[m
+[31m-    "\n",[m
+[31m-    "- **C-style array** (`int arr[5]`): Fixed size, determined at compile time.\n",[m
+[31m-    "- **`std::vector`**: Dynamic array that can grow and shrink. **Always prefer this!**"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "// C-style array (fixed size)\n",[m
+[31m-    "int scores[3] = {90, 85, 95};\n",[m
+[31m-    "\n",[m
+[31m-    "std::cout << \"First score: \" << scores[0] << std::endl;\n",[m
+[31m-    "std::cout << \"Third score: \" << scores[2] << std::endl;"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "// std::vector — dynamic, safe, and modern\n",[m
+[31m-    "std::vector<int> nums = {10, 20, 30};\n",[m
+[31m-    "\n",[m
+[31m-    "nums.push_back(40);  // Add element to the end\n",[m
+[31m-    "nums.push_back(50);\n",[m
+[31m-    "\n",[m
+[31m-    "std::cout << \"Size: \" << nums.size() << std::endl;\n",[m
+[31m-    "\n",[m
+[31m-    "for (const auto& n : nums) {\n",[m
+[31m-    "    std::cout << n << \" \";\n",[m
+[31m-    "}\n",[m
+[31m-    "std::cout << std::endl;"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "// Useful vector operations\n",[m
+[31m-    "std::cout << \"First element: \" << nums.front() << std::endl;\n",[m
+[31m-    "std::cout << \"Last element: \"  << nums.back()  << std::endl;\n",[m
+[31m-    "std::cout << \"Is empty? \"      << nums.empty() << std::endl;\n",[m
+[31m-    "\n",[m
+[31m-    "nums.pop_back();  // Remove last element\n",[m
+[31m-    "std::cout << \"After pop_back, size: \" << nums.size() << std::endl;"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 9. Strings\n",[m
+[31m-    "\n",[m
+[31m-    "`std::string` is the standard way to work with text in C++."[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "std::string first = \"Hello\";\n",[m
+[31m-    "std::string second = \"World\";\n",[m
+[31m-    "\n",[m
+[31m-    "// Concatenation\n",[m
+[31m-    "std::string greeting = first + \", \" + second + \"!\";\n",[m
+[31m-    "std::cout << greeting << std::endl;\n",[m
+[31m-    "\n",[m
+[31m-    "// Length\n",[m
+[31m-    "std::cout << \"Length: \" << greeting.length() << std::endl;\n",[m
+[31m-    "\n",[m
+[31m-    "// Access individual characters\n",[m
+[31m-    "std::cout << \"First char: \" << greeting[0] << std::endl;\n",[m
+[31m-    "std::cout << \"Last char: \"  << greeting.back() << std::endl;"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": null,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [],[m
+[31m-   "source": [[m
+[31m-    "// Substring & find\n",[m
+[31m-    "std::string text = \"Learning C++ is fun\";\n",[m
+[31m-    "\n",[m
+[31m-    "std::cout << \"Substring (0, 8): \" << text.substr(0, 8) << std::endl;\n",[m
+[31m-    "\n",[m
+[31m-    "size_t pos = text.find(\"C++\");\n",[m
+[31m-    "if (pos != std::string::npos) {\n",[m
+[31m-    "    std::cout << \"Found 'C++' at position: \" << pos << std::endl;\n",[m
+[31m-    "}"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 📝 Quick Reference Cheat Sheet\n",[m
+[31m-    "\n",[m
+[31m-    "| Concept | Syntax |\n",[m
+[31m-    "|---|---|\n",[m
+[31m-    "| Print output | `std::cout << \"text\" << std::endl;` |\n",[m
+[31m-    "| Read input | `std::cin >> variable;` |\n",[m
+[31m-    "| Declare variable | `int x = 5;` |\n",[m
+[31m-    "| Constant | `const double PI = 3.14;` |\n",[m
+[31m-    "| Auto type | `auto x = 42;` |\n",[m
+[31m-    "| If statement | `if (x > 0) { ... }` |\n",[m
+[31m-    "| For loop | `for (int i = 0; i < n; i++) { ... }` |\n",[m
+[31m-    "| Range loop | `for (const auto& item : vec) { ... }` |\n",[m
+[31m-    "| Function | `int add(int a, int b) { return a + b; }` |\n",[m
+[31m-    "| Vector | `std::vector<int> v = {1, 2, 3};` |\n",[m
+[31m-    "| String | `std::string s = \"hello\";` |\n",[m
+[31m-    "\n",[m
+[31m-    "---\n",[m
+[31m-    "\n",[m
+[31m-    "*Keep practicing, keep building! 🚀*"[m
+[31m-   ][m
+[31m-  }[m
+[31m- ],[m
+[31m- "metadata": {[m
+[31m-  "kernelspec": {[m
+[31m-   "display_name": "C++17",[m
+[31m-   "language": "C++17",[m
+[31m-   "name": "xcpp17"[m
+[31m-  },[m
+[31m-  "language_info": {[m
+[31m-   "codemirror_mode": "text/x-c++src",[m
+[31m-   "file_extension": ".cpp",[m
+[31m-   "mimetype": "text/x-c++src",[m
+[31m-   "name": "c++",[m
+[31m-   "version": "17"[m
+[31m-  }[m
+[31m- },[m
+[31m- "nbformat": 4,[m
+[31m- "nbformat_minor": 4[m
+[31m-}[m
+[1mdiff --git a/Material/Learning/Jupyter - Python/Basics.ipynb b/Material/Learning/Jupyter - Python/Basics.ipynb[m
+[1mindex f0298b3..02bd7bc 100644[m
+[1m--- a/Material/Learning/Jupyter - Python/Basics.ipynb[m	
+[1m+++ b/Material/Learning/Jupyter - Python/Basics.ipynb[m	
+[36m@@ -4,29 +4,29 @@[m
+    "cell_type": "markdown",[m
+    "metadata": {},[m
+    "source": [[m
+[31m-    "# 🐍 Python Fundamentals — Complete Beginner Guide\n",[m
+[32m+[m[32m    "# 🔷 C++ Basics — Interactive Notebook\n",[m
+     "\n",[m
+[31m-    "A hands-on, cell-by-cell introduction to Python from zero.\n",[m
+[32m+[m[32m    "A beginner-friendly, cell-by-cell introduction to the C++ programming language.\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "## How to run this notebook\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "This notebook requires the **xeus-cling** C++ kernel for Jupyter. Install it with:\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "```bash\n",[m
+[32m+[m[32m    "conda install xeus-cling -c conda-forge\n",[m
+[32m+[m[32m    "```\n",[m
+     "\n",[m
+     "## Topics Covered\n",[m
+     "\n",[m
+[31m-    "1. Print & Comments\n",[m
+[32m+[m[32m    "1. Hello World & Output\n",[m
+     "2. Variables & Data Types\n",[m
+[31m-    "3. Strings\n",[m
+[31m-    "4. Numbers & Math\n",[m
+[31m-    "5. Type Conversion\n",[m
+[31m-    "6. User Input\n",[m
+[31m-    "7. Conditionals (if / elif / else)\n",[m
+[31m-    "8. Loops (for, while)\n",[m
+[31m-    "9. Lists\n",[m
+[31m-    "10. Tuples & Unpacking\n",[m
+[31m-    "11. Dictionaries\n",[m
+[31m-    "12. Functions\n",[m
+[31m-    "13. f-Strings & Formatting\n",[m
+[31m-    "14. List Comprehensions\n",[m
+[31m-    "15. Error Handling (try / except)\n",[m
+[31m-    "16. File I/O Basics\n",[m
+[31m-    "17. Quick Reference Cheat Sheet"[m
+[32m+[m[32m    "3. User Input\n",[m
+[32m+[m[32m    "4. Arithmetic Operators\n",[m
+[32m+[m[32m    "5. Conditionals (if / else)\n",[m
+[32m+[m[32m    "6. Loops (for, while)\n",[m
+[32m+[m[32m    "7. Functions\n",[m
+[32m+[m[32m    "8. Arrays & Vectors\n",[m
+[32m+[m[32m    "9. Strings"[m
+    ][m
+   },[m
+   {[m
+[36m@@ -34,130 +34,43 @@[m
+    "metadata": {},[m
+    "source": [[m
+     "---\n",[m
+[31m-    "## 1. Print & Comments\n",[m
+[32m+[m[32m    "## 1. Hello World & Output\n",[m
+     "\n",[m
+[31m-    "- `print()` displays output to the console.\n",[m
+[31m-    "- `#` starts a single-line comment.\n",[m
+[31m-    "- `\"\"\"...\"\"\"`  or `'''...'''` for multi-line comments / docstrings."[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": 1,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "Hello, World!\n",[m
+[31m-      "Welcome to Python!\n",[m
+[31m-      "Name: Lucas | Age: 22\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[31m-   "source": [[m
+[31m-    "# This is a comment — Python ignores it\n",[m
+[31m-    "print(\"Hello, World!\")\n",[m
+[31m-    "print(\"Welcome to Python!\")\n",[m
+[32m+[m[32m    "In C++, we use `#include <iostream>` to access input/output.\n",[m
+     "\n",[m
+[31m-    "# Print multiple values separated by a space\n",[m
+[31m-    "print(\"Name:\", \"Lucas\", \"| Age:\", 22)"[m
+[32m+[m[32m    "- `std::cout` prints text to the screen.\n",[m
+[32m+[m[32m    "- `<<` is the **insertion operator** (sends data into the stream).\n",[m
+[32m+[m[32m    "- `std::endl` or `\\n` creates a new line."[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 2,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "C++ | Python | Lua\n",[m
+[31m-      "Loading...Done!\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "# sep and end parameters\n",[m
+[31m-    "print(\"C++\", \"Python\", \"Lua\", sep=\" | \")\n",[m
+[31m-    "print(\"Loading\", end=\"...\")\n",[m
+[31m-    "print(\"Done!\")"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 2. Variables & Data Types\n",[m
+[31m-    "\n",[m
+[31m-    "Python is **dynamically typed** — no need to declare the type.\n",[m
+[31m-    "\n",[m
+[31m-    "| Type | Example | Description |\n",[m
+[31m-    "|------|---------|-------------|\n",[m
+[31m-    "| `int` | `42` | Whole number |\n",[m
+[31m-    "| `float` | `3.14` | Decimal number |\n",[m
+[31m-    "| `str` | `\"hello\"` | Text |\n",[m
+[31m-    "| `bool` | `True` / `False` | Boolean |\n",[m
+[31m-    "| `NoneType` | `None` | Absence of value |"[m
+[32m+[m[32m    "#include <iostream>"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 3,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "<class 'str'> Lucas\n",[m
+[31m-      "<class 'int'> 22\n",[m
+[31m-      "<class 'float'> 1.75\n",[m
+[31m-      "<class 'bool'> True\n",[m
+[31m-      "<class 'NoneType'> None\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "name = \"Lucas\"         # str\n",[m
+[31m-    "age = 22               # int\n",[m
+[31m-    "height = 1.75          # float\n",[m
+[31m-    "is_student = True      # bool\n",[m
+[31m-    "nickname = None        # NoneType\n",[m
+[31m-    "\n",[m
+[31m-    "print(type(name), name)\n",[m
+[31m-    "print(type(age), age)\n",[m
+[31m-    "print(type(height), height)\n",[m
+[31m-    "print(type(is_student), is_student)\n",[m
+[31m-    "print(type(nickname), nickname)"[m
+[32m+[m[32m    "std::cout << \"Hello, World!\" << std::endl;"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 4,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "10 20 30\n",[m
+[31m-      "After swap: a=2, b=1\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "# Multiple assignment\n",[m
+[31m-    "x, y, z = 10, 20, 30\n",[m
+[31m-    "print(x, y, z)\n",[m
+[31m-    "\n",[m
+[31m-    "# Swap variables (no temp needed!)\n",[m
+[31m-    "a, b = 1, 2\n",[m
+[31m-    "a, b = b, a\n",[m
+[31m-    "print(f\"After swap: a={a}, b={b}\")"[m
+[32m+[m[32m    "// You can chain multiple values with <<\n",[m
+[32m+[m[32m    "std::cout << \"Line 1\" << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"Line 2\" << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"Result: \" << 10 + 5 << std::endl;"[m
+    ][m
+   },[m
+   {[m
+[36m@@ -165,166 +78,94 @@[m
+    "metadata": {},[m
+    "source": [[m
+     "---\n",[m
+[31m-    "## 3. Strings\n",[m
+[32m+[m[32m    "## 2. Variables & Data Types\n",[m
+     "\n",[m
+[31m-    "Strings are sequences of characters. They are **immutable** (cannot be changed in place)."[m
+[32m+[m[32m    "C++ is a **statically typed** language — every variable must have a declared type.\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "| Type | What it stores | Example |\n",[m
+[32m+[m[32m    "|------|---------------|--------|\n",[m
+[32m+[m[32m    "| `int` | Whole numbers | `42` |\n",[m
+[32m+[m[32m    "| `double` | Decimal numbers | `3.14` |\n",[m
+[32m+[m[32m    "| `char` | Single character | `'A'` |\n",[m
+[32m+[m[32m    "| `bool` | True or False | `true` |\n",[m
+[32m+[m[32m    "| `std::string` | Text | `\"Hello\"` |"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 5,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "First char: H\n",[m
+[31m-      "Last char: !\n",[m
+[31m-      "First 5: Hello\n",[m
+[31m-      "Reversed: !dlroW ,olleH\n",[m
+[31m-      "Length: 13\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "greeting = \"Hello, World!\"\n",[m
+[31m-    "\n",[m
+[31m-    "# Indexing (0-based)\n",[m
+[31m-    "print(\"First char:\", greeting[0])\n",[m
+[31m-    "print(\"Last char:\", greeting[-1])\n",[m
+[32m+[m[32m    "int age = 22;\n",[m
+[32m+[m[32m    "double height = 1.75;\n",[m
+[32m+[m[32m    "char grade = 'A';\n",[m
+[32m+[m[32m    "bool is_student = true;\n",[m
+     "\n",[m
+[31m-    "# Slicing [start:stop:step]\n",[m
+[31m-    "print(\"First 5:\", greeting[:5])\n",[m
+[31m-    "print(\"Reversed:\", greeting[::-1])\n",[m
+[31m-    "\n",[m
+[31m-    "# Length\n",[m
+[31m-    "print(\"Length:\", len(greeting))"[m
+[32m+[m[32m    "std::cout << \"Age: \" << age << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"Height: \" << height << \" m\" << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"Grade: \" << grade << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"Student? \" << is_student << std::endl; // 1 = true, 0 = false"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 6,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "Python is Awesome\n",[m
+[31m-      "python is awesome\n",[m
+[31m-      "PYTHON IS AWESOME\n",[m
+[31m-      "Python is Fun\n",[m
+[31m-      "['Python', 'is', 'Awesome']\n",[m
+[31m-      "True\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "text = \"  Python is Awesome  \"\n",[m
+[32m+[m[32m    "// Strings require #include <string>\n",[m
+[32m+[m[32m    "#include <string>\n",[m
+     "\n",[m
+[31m-    "print(text.strip())          # Remove whitespace\n",[m
+[31m-    "print(text.strip().lower())  # Lowercase\n",[m
+[31m-    "print(text.strip().upper())  # Uppercase\n",[m
+[31m-    "print(text.strip().replace(\"Awesome\", \"Fun\"))\n",[m
+[31m-    "print(text.strip().split())  # Split into a list of words\n",[m
+[31m-    "print(\"Python\" in text)      # Check if substring exists"[m
+[32m+[m[32m    "std::string name = \"Lucas\";\n",[m
+[32m+[m[32m    "std::cout << \"Name: \" << name << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"Length: \" << name.length() << \" characters\" << std::endl;"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "markdown",[m
+    "metadata": {},[m
+    "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 4. Numbers & Math\n",[m
+[32m+[m[32m    "### `auto` keyword\n",[m
+     "\n",[m
+[31m-    "| Operator | Meaning | Example |\n",[m
+[31m-    "|:---:|---|---|\n",[m
+[31m-    "| `+` | Addition | `5 + 3 → 8` |\n",[m
+[31m-    "| `-` | Subtraction | `5 - 3 → 2` |\n",[m
+[31m-    "| `*` | Multiplication | `5 * 3 → 15` |\n",[m
+[31m-    "| `/` | Division (float) | `7 / 2 → 3.5` |\n",[m
+[31m-    "| `//` | Floor division | `7 // 2 → 3` |\n",[m
+[31m-    "| `%` | Modulus | `7 % 2 → 1` |\n",[m
+[31m-    "| `**` | Exponent | `2 ** 3 → 8` |"[m
+[32m+[m[32m    "Modern C++ can figure out the type automatically:"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 7,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "7 / 2  = 3.5\n",[m
+[31m-      "7 // 2 = 3\n",[m
+[31m-      "7 % 2  = 1\n",[m
+[31m-      "2 ** 10 = 1024\n",[m
+[31m-      "abs(-5): 5\n",[m
+[31m-      "round(3.7): 4\n",[m
+[31m-      "max(1, 5, 3): 5\n",[m
+[31m-      "min(1, 5, 3): 1\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "print(\"7 / 2  =\", 7 / 2)    # Float division\n",[m
+[31m-    "print(\"7 // 2 =\", 7 // 2)   # Floor division\n",[m
+[31m-    "print(\"7 % 2  =\", 7 % 2)    # Remainder\n",[m
+[31m-    "print(\"2 ** 10 =\", 2 ** 10)  # Exponentiation\n",[m
+[32m+[m[32m    "auto x = 10;       // int\n",[m
+[32m+[m[32m    "auto pi = 3.14;    // double\n",[m
+[32m+[m[32m    "auto msg = \"Hi!\";  // const char*\n",[m
+     "\n",[m
+[31m-    "# Built-in math functions\n",[m
+[31m-    "print(\"abs(-5):\", abs(-5))\n",[m
+[31m-    "print(\"round(3.7):\", round(3.7))\n",[m
+[31m-    "print(\"max(1, 5, 3):\", max(1, 5, 3))\n",[m
+[31m-    "print(\"min(1, 5, 3):\", min(1, 5, 3))"[m
+[32m+[m[32m    "std::cout << x << \", \" << pi << \", \" << msg << std::endl;"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "markdown",[m
+    "metadata": {},[m
+    "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 5. Type Conversion\n",[m
+[32m+[m[32m    "### Constants\n",[m
+     "\n",[m
+[31m-    "Convert between types using `int()`, `float()`, `str()`, `bool()`."[m
+[32m+[m[32m    "Use `const` for values that should **never change**:"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 8,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "50\n",[m
+[31m-      "I am 22 years old.\n",[m
+[31m-      "False\n",[m
+[31m-      "True\n",[m
+[31m-      "False\n",[m
+[31m-      "True\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "# String to number\n",[m
+[31m-    "num_str = \"42\"\n",[m
+[31m-    "num_int = int(num_str)\n",[m
+[31m-    "print(num_int + 8)  # 50\n",[m
+[32m+[m[32m    "const double PI = 3.14159265;\n",[m
+[32m+[m[32m    "const int MAX_LIVES = 3;\n",[m
+     "\n",[m
+[31m-    "# Number to string\n",[m
+[31m-    "age = 22\n",[m
+[31m-    "print(\"I am \" + str(age) + \" years old.\")\n",[m
+[32m+[m[32m    "std::cout << \"PI = \" << PI << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"Max Lives = \" << MAX_LIVES << std::endl;\n",[m
+     "\n",[m
+[31m-    "# Truthiness\n",[m
+[31m-    "print(bool(0))     # False\n",[m
+[31m-    "print(bool(1))     # True\n",[m
+[31m-    "print(bool(\"\"))    # False (empty string)\n",[m
+[31m-    "print(bool(\"hi\"))  # True (non-empty string)"[m
+[32m+[m[32m    "// PI = 5.0;  // ERROR! Cannot modify a const variable"[m
+    ][m
+   },[m
+   {[m
+[36m@@ -332,34 +173,29 @@[m
+    "metadata": {},[m
+    "source": [[m
+     "---\n",[m
+[31m-    "## 6. User Input\n",[m
+[32m+[m[32m    "## 3. User Input\n",[m
+     "\n",[m
+[31m-    "`input()` reads a string from the user. Always returns a `str`, so convert if needed.\n",[m
+[32m+[m[32m    "- `std::cin >> variable` reads input from the user.\n",[m
+[32m+[m[32m    "- `std::getline(std::cin, str)` reads an entire line (including spaces).\n",[m
+     "\n",[m
+[31m-    "> ⚠️ `input()` is simulated below since Jupyter handles it differently in batch execution."[m
+[32m+[m[32m    "> ⚠️ **Note:** `std::cin` may not work interactively in all Jupyter C++ kernels. This section works best when compiled and run in the terminal."[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 9,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "Hello, Lucas! You are 22 years old.\n",[m
+[31m-      "In 10 years you will be 32.\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "# Simulated input for notebook:\n",[m
+[31m-    "user_name = \"Lucas\"  # In real code: input(\"Enter your name: \")\n",[m
+[31m-    "user_age = \"22\"      # In real code: input(\"Enter your age: \")\n",[m
+[32m+[m[32m    "// Example (works in terminal):\n",[m
+[32m+[m[32m    "// int user_age;\n",[m
+[32m+[m[32m    "// std::cout << \"Enter your age: \";\n",[m
+[32m+[m[32m    "// std::cin >> user_age;\n",[m
+[32m+[m[32m    "// std::cout << \"You are \" << user_age << \" years old.\" << std::endl;\n",[m
+     "\n",[m
+[31m-    "print(f\"Hello, {user_name}! You are {int(user_age)} years old.\")\n",[m
+[31m-    "print(f\"In 10 years you will be {int(user_age) + 10}.\")"[m
+[32m+[m[32m    "// Simulated for notebook:\n",[m
+[32m+[m[32m    "int user_age = 25;\n",[m
+[32m+[m[32m    "std::cout << \"Simulated input -> Age: \" << user_age << std::endl;"[m
+    ][m
+   },[m
+   {[m
+[36m@@ -367,66 +203,42 @@[m
+    "metadata": {},[m
+    "source": [[m
+     "---\n",[m
+[31m-    "## 7. Conditionals (if / elif / else)\n",[m
+[32m+[m[32m    "## 4. Arithmetic Operators\n",[m
+     "\n",[m
+[31m-    "Python uses **indentation** (not braces) to define blocks.\n",[m
+[31m-    "\n",[m
+[31m-    "**Comparison:** `==`, `!=`, `<`, `>`, `<=`, `>=`\n",[m
+[31m-    "\n",[m
+[31m-    "**Logical:** `and`, `or`, `not`"[m
+[32m+[m[32m    "| Operator | Meaning | Example |\n",[m
+[32m+[m[32m    "|:---:|---|---|\n",[m
+[32m+[m[32m    "| `+` | Addition | `5 + 3 = 8` |\n",[m
+[32m+[m[32m    "| `-` | Subtraction | `5 - 3 = 2` |\n",[m
+[32m+[m[32m    "| `*` | Multiplication | `5 * 3 = 15` |\n",[m
+[32m+[m[32m    "| `/` | Division | `7 / 2 = 3` (integer!) |\n",[m
+[32m+[m[32m    "| `%` | Modulus (remainder) | `7 % 2 = 1` |"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 10,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "Grade: B (Great!)\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "score = 85\n",[m
+[32m+[m[32m    "int a = 10;\n",[m
+[32m+[m[32m    "int b = 3;\n",[m
+     "\n",[m
+[31m-    "if score >= 90:\n",[m
+[31m-    "    print(\"Grade: A (Excellent!)\")\n",[m
+[31m-    "elif score >= 70:\n",[m
+[31m-    "    print(\"Grade: B (Great!)\")\n",[m
+[31m-    "elif score >= 50:\n",[m
+[31m-    "    print(\"Grade: C (Okay)\")\n",[m
+[31m-    "else:\n",[m
+[31m-    "    print(\"Grade: F (Try again)\")"[m
+[32m+[m[32m    "std::cout << \"a + b = \" << a + b << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"a - b = \" << a - b << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"a * b = \" << a * b << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"a / b = \" << a / b << \" (integer division!)\" << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"a % b = \" << a % b << \" (remainder)\" << std::endl;"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 11,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "Perfect day!\n",[m
+[31m-      "Status: adult\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "# Logical operators\n",[m
+[31m-    "temp = 25\n",[m
+[31m-    "is_sunny = True\n",[m
+[31m-    "\n",[m
+[31m-    "if temp > 20 and is_sunny:\n",[m
+[31m-    "    print(\"Perfect day!\")\n",[m
+[31m-    "\n",[m
+[31m-    "# Ternary expression (one-liner)\n",[m
+[31m-    "status = \"adult\" if age >= 18 else \"minor\"\n",[m
+[31m-    "print(f\"Status: {status}\")"[m
+[32m+[m[32m    "// To get decimal division, at least one operand must be double\n",[m
+[32m+[m[32m    "double result = 10.0 / 3;\n",[m
+[32m+[m[32m    "std::cout << \"10.0 / 3 = \" << result << std::endl;"[m
+    ][m
+   },[m
+   {[m
+[36m@@ -434,132 +246,51 @@[m
+    "metadata": {},[m
+    "source": [[m
+     "---\n",[m
+[31m-    "## 8. Loops (for, while)\n",[m
+[32m+[m[32m    "## 5. Conditionals (if / else)\n",[m
+     "\n",[m
+[31m-    "### `for` loop — iterate over sequences"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": 12,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "I like apple\n",[m
+[31m-      "I like banana\n",[m
+[31m-      "I like cherry\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[31m-   "source": [[m
+[31m-    "# Iterate over a list\n",[m
+[31m-    "fruits = [\"apple\", \"banana\", \"cherry\"]\n",[m
+[31m-    "for fruit in fruits:\n",[m
+[31m-    "    print(f\"I like {fruit}\")"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": 13,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "Count: 1\n",[m
+[31m-      "Count: 2\n",[m
+[31m-      "Count: 3\n",[m
+[31m-      "Count: 4\n",[m
+[31m-      "Count: 5\n",[m
+[31m-      "Even: [0, 2, 4, 6, 8, 10]\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[31m-   "source": [[m
+[31m-    "# range(start, stop, step)\n",[m
+[31m-    "for i in range(1, 6):\n",[m
+[31m-    "    print(f\"Count: {i}\")\n",[m
+[32m+[m[32m    "Control the flow of your program based on conditions.\n",[m
+     "\n",[m
+[31m-    "# Even numbers from 0 to 10\n",[m
+[31m-    "print(\"Even:\", list(range(0, 11, 2)))"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "### `while` loop — repeat while condition is true"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": 14,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "5... 4... 3... 2... 1... Liftoff! 🚀\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[31m-   "source": [[m
+[31m-    "countdown = 5\n",[m
+[31m-    "while countdown > 0:\n",[m
+[31m-    "    print(countdown, end=\"... \")\n",[m
+[31m-    "    countdown -= 1\n",[m
+[31m-    "print(\"Liftoff! 🚀\")"[m
+[32m+[m[32m    "**Comparison Operators:** `==`, `!=`, `<`, `>`, `<=`, `>=`\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "**Logical Operators:** `&&` (AND), `||` (OR), `!` (NOT)"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 15,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "0 1 2 4 5 6 \n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "# break and continue\n",[m
+[31m-    "for i in range(10):\n",[m
+[31m-    "    if i == 3:\n",[m
+[31m-    "        continue  # Skip 3\n",[m
+[31m-    "    if i == 7:\n",[m
+[31m-    "        break     # Stop at 7\n",[m
+[31m-    "    print(i, end=\" \")\n",[m
+[31m-    "print()  # newline"[m
+[32m+[m[32m    "int score = 85;\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "if (score >= 90) {\n",[m
+[32m+[m[32m    "    std::cout << \"Grade: A (Excellent!)\" << std::endl;\n",[m
+[32m+[m[32m    "} else if (score >= 70) {\n",[m
+[32m+[m[32m    "    std::cout << \"Grade: B (Great!)\" << std::endl;\n",[m
+[32m+[m[32m    "} else {\n",[m
+[32m+[m[32m    "    std::cout << \"Grade: C (Keep studying!)\" << std::endl;\n",[m
+[32m+[m[32m    "}"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 16,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "1. C++\n",[m
+[31m-      "2. Python\n",[m
+[31m-      "3. Lua\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "# enumerate — get index AND value\n",[m
+[31m-    "languages = [\"C++\", \"Python\", \"Lua\"]\n",[m
+[31m-    "for idx, lang in enumerate(languages, start=1):\n",[m
+[31m-    "    print(f\"{idx}. {lang}\")"[m
+[32m+[m[32m    "// Logical operators\n",[m
+[32m+[m[32m    "int temp = 25;\n",[m
+[32m+[m[32m    "bool is_sunny = true;\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "if (temp > 20 && is_sunny) {\n",[m
+[32m+[m[32m    "    std::cout << \"Perfect day to go outside!\" << std::endl;\n",[m
+[32m+[m[32m    "}\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "if (temp < 0 || temp > 40) {\n",[m
+[32m+[m[32m    "    std::cout << \"Extreme weather!\" << std::endl;\n",[m
+[32m+[m[32m    "} else {\n",[m
+[32m+[m[32m    "    std::cout << \"Temperature is normal.\" << std::endl;\n",[m
+[32m+[m[32m    "}"[m
+    ][m
+   },[m
+   {[m
+[36m@@ -567,193 +298,67 @@[m
+    "metadata": {},[m
+    "source": [[m
+     "---\n",[m
+[31m-    "## 9. Lists\n",[m
+[32m+[m[32m    "## 6. Loops\n",[m
+     "\n",[m
+[31m-    "Lists are **ordered, mutable** collections. The most used data structure in Python."[m
+[32m+[m[32m    "### `for` loop — when you know how many times to repeat"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 17,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "First: 10\n",[m
+[31m-      "Last: 50\n",[m
+[31m-      "Slice [1:4]: [20, 30, 40]\n",[m
+[31m-      "List: [5, 10, 20, 40, 50]\n",[m
+[31m-      "Popped: 60\n",[m
+[31m-      "Length: 5\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "numbers = [10, 20, 30, 40, 50]\n",[m
+[31m-    "\n",[m
+[31m-    "# Accessing elements\n",[m
+[31m-    "print(\"First:\", numbers[0])\n",[m
+[31m-    "print(\"Last:\", numbers[-1])\n",[m
+[31m-    "print(\"Slice [1:4]:\", numbers[1:4])\n",[m
+[31m-    "\n",[m
+[31m-    "# Modifying\n",[m
+[31m-    "numbers.append(60)       # Add to end\n",[m
+[31m-    "numbers.insert(0, 5)     # Insert at index 0\n",[m
+[31m-    "numbers.remove(30)       # Remove by value\n",[m
+[31m-    "popped = numbers.pop()   # Remove & return last\n",[m
+[31m-    "\n",[m
+[31m-    "print(\"List:\", numbers)\n",[m
+[31m-    "print(\"Popped:\", popped)\n",[m
+[31m-    "print(\"Length:\", len(numbers))"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": 18,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "Sorted: [78, 85, 88, 92, 95]\n",[m
+[31m-      "Descending: [95, 92, 88, 85, 78]\n",[m
+[31m-      "Sum: 438\n",[m
+[31m-      "Min: 78\n",[m
+[31m-      "Max: 95\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[31m-   "source": [[m
+[31m-    "# Sorting\n",[m
+[31m-    "scores = [85, 92, 78, 95, 88]\n",[m
+[31m-    "scores.sort()                # In-place sort (ascending)\n",[m
+[31m-    "print(\"Sorted:\", scores)\n",[m
+[31m-    "\n",[m
+[31m-    "scores.sort(reverse=True)    # Descending\n",[m
+[31m-    "print(\"Descending:\", scores)\n",[m
+[31m-    "\n",[m
+[31m-    "# Useful functions\n",[m
+[31m-    "print(\"Sum:\", sum(scores))\n",[m
+[31m-    "print(\"Min:\", min(scores))\n",[m
+[31m-    "print(\"Max:\", max(scores))"[m
+[32m+[m[32m    "// Classic for loop: initialization; condition; update\n",[m
+[32m+[m[32m    "for (int i = 1; i <= 5; i++) {\n",[m
+[32m+[m[32m    "    std::cout << \"Count: \" << i << std::endl;\n",[m
+[32m+[m[32m    "}"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "markdown",[m
+    "metadata": {},[m
+    "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 10. Tuples & Unpacking\n",[m
+[31m-    "\n",[m
+[31m-    "Tuples are like lists but **immutable** (cannot be modified after creation)."[m
+[32m+[m[32m    "### `while` loop — repeat while a condition is true"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 19,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "X: 10\n",[m
+[31m-      "Y: 20\n",[m
+[31m-      "Unpacked: x=10, y=20\n",[m
+[31m-      "Min: 1, Max: 9\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "# Tuple\n",[m
+[31m-    "coordinates = (10, 20)\n",[m
+[31m-    "print(\"X:\", coordinates[0])\n",[m
+[31m-    "print(\"Y:\", coordinates[1])\n",[m
+[31m-    "\n",[m
+[31m-    "# Unpacking\n",[m
+[31m-    "x, y = coordinates\n",[m
+[31m-    "print(f\"Unpacked: x={x}, y={y}\")\n",[m
+[31m-    "\n",[m
+[31m-    "# Tuple as function return\n",[m
+[31m-    "def min_max(numbers):\n",[m
+[31m-    "    return min(numbers), max(numbers)\n",[m
+[32m+[m[32m    "int countdown = 5;\n",[m
+     "\n",[m
+[31m-    "lo, hi = min_max([3, 1, 4, 1, 5, 9])\n",[m
+[31m-    "print(f\"Min: {lo}, Max: {hi}\")"[m
+[32m+[m[32m    "while (countdown > 0) {\n",[m
+[32m+[m[32m    "    std::cout << countdown << \"... \";\n",[m
+[32m+[m[32m    "    countdown--;\n",[m
+[32m+[m[32m    "}\n",[m
+[32m+[m[32m    "std::cout << \"Liftoff! 🚀\" << std::endl;"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "markdown",[m
+    "metadata": {},[m
+    "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 11. Dictionaries\n",[m
+[32m+[m[32m    "### Range-based `for` loop (Modern C++)\n",[m
+     "\n",[m
+[31m-    "Key-value pairs with **O(1) average lookups**. Keys must be hashable (immutable)."[m
+[32m+[m[32m    "The cleanest way to iterate over a collection:"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 20,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "Name: Lucas\n",[m
+[31m-      "Languages: ['C++', 'Python', 'Lua']\n",[m
+[31m-      "GPA: Not set\n",[m
+[31m-      "Updated: {'name': 'Lucas', 'age': 22, 'languages': ['C++', 'Python', 'Lua'], 'gpa': 3.8}\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "student = {\n",[m
+[31m-    "    \"name\": \"Lucas\",\n",[m
+[31m-    "    \"age\": 22,\n",[m
+[31m-    "    \"languages\": [\"C++\", \"Python\", \"Lua\"]\n",[m
+[31m-    "}\n",[m
+[31m-    "\n",[m
+[31m-    "print(\"Name:\", student[\"name\"])\n",[m
+[31m-    "print(\"Languages:\", student[\"languages\"])\n",[m
+[32m+[m[32m    "#include <vector>\n",[m
+     "\n",[m
+[31m-    "# Safe access with .get()\n",[m
+[31m-    "print(\"GPA:\", student.get(\"gpa\", \"Not set\"))\n",[m
+[32m+[m[32m    "std::vector<std::string> languages = {\"C++\", \"Python\", \"Lua\"};\n",[m
+     "\n",[m
+[31m-    "# Add / modify\n",[m
+[31m-    "student[\"gpa\"] = 3.8\n",[m
+[31m-    "print(\"Updated:\", student)"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "code",[m
+[31m-   "execution_count": 21,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "  name: Lucas\n",[m
+[31m-      "  age: 22\n",[m
+[31m-      "  languages: ['C++', 'Python', 'Lua']\n",[m
+[31m-      "  gpa: 3.8\n",[m
+[31m-      "Keys: ['name', 'age', 'languages', 'gpa']\n",[m
+[31m-      "Values: ['Lucas', 22, ['C++', 'Python', 'Lua'], 3.8]\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[31m-   "source": [[m
+[31m-    "# Iterating a dictionary\n",[m
+[31m-    "for key, value in student.items():\n",[m
+[31m-    "    print(f\"  {key}: {value}\")\n",[m
+[31m-    "\n",[m
+[31m-    "print(\"Keys:\", list(student.keys()))\n",[m
+[31m-    "print(\"Values:\", list(student.values()))"[m
+[32m+[m[32m    "for (const auto& lang : languages) {\n",[m
+[32m+[m[32m    "    std::cout << \"I'm learning: \" << lang << std::endl;\n",[m
+[32m+[m[32m    "}"[m
+    ][m
+   },[m
+   {[m
+[36m@@ -761,80 +366,58 @@[m
+    "metadata": {},[m
+    "source": [[m
+     "---\n",[m
+[31m-    "## 12. Functions\n",[m
+[32m+[m[32m    "## 7. Functions\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "Functions let you organize and reuse code.\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "```cpp\n",[m
+[32m+[m[32m    "ReturnType function_name(ParameterType param) {\n",[m
+[32m+[m[32m    "    // body\n",[m
+[32m+[m[32m    "    return value;\n",[m
+[32m+[m[32m    "}\n",[m
+[32m+[m[32m    "```\n",[m
+     "\n",[m
+[31m-    "Functions are defined with `def`. They can have default parameters, return values, and type hints."[m
+[32m+[m[32m    "Use `void` when the function doesn't return anything."[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 22,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "Hello, Lucas!\n",[m
+[31m-      "Hey, Alice!\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "def greet(name, greeting=\"Hello\"):\n",[m
+[31m-    "    \"\"\"Greets a person with a custom or default greeting.\"\"\"\n",[m
+[31m-    "    return f\"{greeting}, {name}!\"\n",[m
+[32m+[m[32m    "int add(int a, int b) {\n",[m
+[32m+[m[32m    "    return a + b;\n",[m
+[32m+[m[32m    "}\n",[m
+     "\n",[m
+[31m-    "print(greet(\"Lucas\"))\n",[m
+[31m-    "print(greet(\"Alice\", \"Hey\"))"[m
+[32m+[m[32m    "void greet(const std::string& name) {\n",[m
+[32m+[m[32m    "    std::cout << \"Hello, \" << name << \"! Welcome to C++.\" << std::endl;\n",[m
+[32m+[m[32m    "}"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 23,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "Positional args: (1, 2, 3)\n",[m
+[31m-      "Keyword args: {'lang': 'Python', 'level': 'beginner'}\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "# *args and **kwargs\n",[m
+[31m-    "def summarize(*args, **kwargs):\n",[m
+[31m-    "    print(\"Positional args:\", args)\n",[m
+[31m-    "    print(\"Keyword args:\", kwargs)\n",[m
+[31m-    "\n",[m
+[31m-    "summarize(1, 2, 3, lang=\"Python\", level=\"beginner\")"[m
+[32m+[m[32m    "std::cout << \"3 + 7 = \" << add(3, 7) << std::endl;\n",[m
+[32m+[m[32m    "greet(\"Lucas\");"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 24,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "5² = 25\n",[m
+[31m-      "Ranked: [('Charlie', 95), ('Alice', 90), ('Bob', 75)]\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "# Lambda (anonymous function)\n",[m
+[31m-    "square = lambda x: x ** 2\n",[m
+[31m-    "print(\"5² =\", square(5))\n",[m
+[32m+[m[32m    "// Function with default parameter\n",[m
+[32m+[m[32m    "double calculate_area(double width, double height = 1.0) {\n",[m
+[32m+[m[32m    "    return width * height;\n",[m
+[32m+[m[32m    "}\n",[m
+     "\n",[m
+[31m-    "# Using lambda with sorted\n",[m
+[31m-    "students = [(\"Alice\", 90), (\"Bob\", 75), (\"Charlie\", 95)]\n",[m
+[31m-    "ranked = sorted(students, key=lambda s: s[1], reverse=True)\n",[m
+[31m-    "print(\"Ranked:\", ranked)"[m
+[32m+[m[32m    "std::cout << \"Area (5 x 3): \" << calculate_area(5, 3) << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"Area (5, default): \" << calculate_area(5) << std::endl;"[m
+    ][m
+   },[m
+   {[m
+[36m@@ -842,106 +425,58 @@[m
+    "metadata": {},[m
+    "source": [[m
+     "---\n",[m
+[31m-    "## 13. f-Strings & Formatting\n",[m
+[32m+[m[32m    "## 8. Arrays & Vectors\n",[m
+     "\n",[m
+[31m-    "f-Strings (Python 3.6+) are the cleanest way to format output."[m
+[32m+[m[32m    "- **C-style array** (`int arr[5]`): Fixed size, determined at compile time.\n",[m
+[32m+[m[32m    "- **`std::vector`**: Dynamic array that can grow and shrink. **Always prefer this!**"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 25,[m
+[31m-   "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "Name: Lucas\n",[m
+[31m-      "Score: 95.68\n",[m
+[31m-      "Score:      95.68\n",[m
+[31m-      "Binary of 42: 101010\n",[m
+[31m-      "Hex of 255: 0xff\n",[m
+[31m-      "      Centered      \n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[31m-   "source": [[m
+[31m-    "name = \"Lucas\"\n",[m
+[31m-    "score = 95.678\n",[m
+[31m-    "\n",[m
+[31m-    "print(f\"Name: {name}\")\n",[m
+[31m-    "print(f\"Score: {score:.2f}\")          # 2 decimal places\n",[m
+[31m-    "print(f\"Score: {score:>10.2f}\")        # Right-aligned, 10 chars wide\n",[m
+[31m-    "print(f\"Binary of 42: {42:b}\")         # Binary representation\n",[m
+[31m-    "print(f\"Hex of 255: {255:#x}\")         # Hexadecimal\n",[m
+[31m-    "print(f\"{'Centered':^20}\")             # Center-aligned, 20 chars"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 14. List Comprehensions\n",[m
+[32m+[m[32m    "// C-style array (fixed size)\n",[m
+[32m+[m[32m    "int scores[3] = {90, 85, 95};\n",[m
+     "\n",[m
+[31m-    "A concise way to create lists from existing sequences.\n",[m
+[31m-    "\n",[m
+[31m-    "Syntax: `[expression for item in iterable if condition]`"[m
+[32m+[m[32m    "std::cout << \"First score: \" << scores[0] << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"Third score: \" << scores[2] << std::endl;"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 26,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "Squares: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]\n",[m
+[31m-      "Evens: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]\n",[m
+[31m-      "Upper: ['HELLO', 'WORLD', 'PYTHON']\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "# Squares of 1 to 10\n",[m
+[31m-    "squares = [x ** 2 for x in range(1, 11)]\n",[m
+[31m-    "print(\"Squares:\", squares)\n",[m
+[32m+[m[32m    "// std::vector — dynamic, safe, and modern\n",[m
+[32m+[m[32m    "std::vector<int> nums = {10, 20, 30};\n",[m
+[32m+[m[32m    "\n",[m
+[32m+[m[32m    "nums.push_back(40);  // Add element to the end\n",[m
+[32m+[m[32m    "nums.push_back(50);\n",[m
+     "\n",[m
+[31m-    "# Only even numbers\n",[m
+[31m-    "evens = [x for x in range(20) if x % 2 == 0]\n",[m
+[31m-    "print(\"Evens:\", evens)\n",[m
+[32m+[m[32m    "std::cout << \"Size: \" << nums.size() << std::endl;\n",[m
+     "\n",[m
+[31m-    "# Transform strings\n",[m
+[31m-    "words = [\"hello\", \"world\", \"python\"]\n",[m
+[31m-    "upper_words = [w.upper() for w in words]\n",[m
+[31m-    "print(\"Upper:\", upper_words)"[m
+[32m+[m[32m    "for (const auto& n : nums) {\n",[m
+[32m+[m[32m    "    std::cout << n << \" \";\n",[m
+[32m+[m[32m    "}\n",[m
+[32m+[m[32m    "std::cout << std::endl;"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 27,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "{'Alice': 5, 'Bob': 3, 'Charlie': 7}\n",[m
+[31m-      "Unique lengths: {3, 5, 7}\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "# Dictionary comprehension\n",[m
+[31m-    "names = [\"Alice\", \"Bob\", \"Charlie\"]\n",[m
+[31m-    "name_lengths = {name: len(name) for name in names}\n",[m
+[31m-    "print(name_lengths)\n",[m
+[32m+[m[32m    "// Useful vector operations\n",[m
+[32m+[m[32m    "std::cout << \"First element: \" << nums.front() << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"Last element: \"  << nums.back()  << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"Is empty? \"      << nums.empty() << std::endl;\n",[m
+     "\n",[m
+[31m-    "# Set comprehension\n",[m
+[31m-    "unique_lengths = {len(name) for name in names}\n",[m
+[31m-    "print(\"Unique lengths:\", unique_lengths)"[m
+[32m+[m[32m    "nums.pop_back();  // Remove last element\n",[m
+[32m+[m[32m    "std::cout << \"After pop_back, size: \" << nums.size() << std::endl;"[m
+    ][m
+   },[m
+   {[m
+[36m@@ -949,92 +484,47 @@[m
+    "metadata": {},[m
+    "source": [[m
+     "---\n",[m
+[31m-    "## 15. Error Handling (try / except)\n",[m
+[32m+[m[32m    "## 9. Strings\n",[m
+     "\n",[m
+[31m-    "Gracefully handle errors instead of crashing."[m
+[32m+[m[32m    "`std::string` is the standard way to work with text in C++."[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 28,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "Cannot divide by zero!\n",[m
+[31m-      "ValueError caught: invalid literal for int() with base 10: 'abc'\n",[m
+[31m-      "Successfully converted: 42\n",[m
+[31m-      "This always runs.\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "# Basic try/except\n",[m
+[31m-    "try:\n",[m
+[31m-    "    result = 10 / 0\n",[m
+[31m-    "except ZeroDivisionError:\n",[m
+[31m-    "    print(\"Cannot divide by zero!\")\n",[m
+[32m+[m[32m    "std::string first = \"Hello\";\n",[m
+[32m+[m[32m    "std::string second = \"World\";\n",[m
+     "\n",[m
+[31m-    "# Multiple exceptions\n",[m
+[31m-    "try:\n",[m
+[31m-    "    num = int(\"abc\")\n",[m
+[31m-    "except ValueError as e:\n",[m
+[31m-    "    print(f\"ValueError caught: {e}\")\n",[m
+[32m+[m[32m    "// Concatenation\n",[m
+[32m+[m[32m    "std::string greeting = first + \", \" + second + \"!\";\n",[m
+[32m+[m[32m    "std::cout << greeting << std::endl;\n",[m
+     "\n",[m
+[31m-    "# try/except/else/finally\n",[m
+[31m-    "try:\n",[m
+[31m-    "    value = int(\"42\")\n",[m
+[31m-    "except ValueError:\n",[m
+[31m-    "    print(\"Not a number\")\n",[m
+[31m-    "else:\n",[m
+[31m-    "    print(f\"Successfully converted: {value}\")\n",[m
+[31m-    "finally:\n",[m
+[31m-    "    print(\"This always runs.\")"[m
+[31m-   ][m
+[31m-  },[m
+[31m-  {[m
+[31m-   "cell_type": "markdown",[m
+[31m-   "metadata": {},[m
+[31m-   "source": [[m
+[31m-    "---\n",[m
+[31m-    "## 16. File I/O Basics\n",[m
+[32m+[m[32m    "// Length\n",[m
+[32m+[m[32m    "std::cout << \"Length: \" << greeting.length() << std::endl;\n",[m
+     "\n",[m
+[31m-    "Read and write files using `open()` with context managers (`with` statement)."[m
+[32m+[m[32m    "// Access individual characters\n",[m
+[32m+[m[32m    "std::cout << \"First char: \" << greeting[0] << std::endl;\n",[m
+[32m+[m[32m    "std::cout << \"Last char: \"  << greeting.back() << std::endl;"[m
+    ][m
+   },[m
+   {[m
+    "cell_type": "code",[m
+[31m-   "execution_count": 29,[m
+[32m+[m[32m   "execution_count": null,[m
+    "metadata": {},[m
+[31m-   "outputs": [[m
+[31m-    {[m
+[31m-     "name": "stdout",[m
+[31m-     "output_type": "stream",[m
+[31m-     "text": [[m
+[31m-      "Line 1: Hello from Python!\n",[m
+[31m-      "Line 2: File I/O is simple.\n",[m
+[31m-      "\n",[m
+[31m-      "File created, read, and cleaned up.\n"[m
+[31m-     ][m
+[31m-    }[m
+[31m-   ],[m
+[32m+[m[32m   "outputs": [],[m
+    "source": [[m
+[31m-    "# Writing to a file\n",[m
+[31m-    "with open(\"example.txt\", \"w\") as f:\n",[m
+[31m-    "    f.write(\"Line 1: Hello from Python!\\n\")\n",[m
+[31m-    "    f.write(\"Line 2: File I/O is simple.\\n\")\n",[m
+[32m+[m[32m    "// Substring & find\n",[m
+[32m+[m[32m    "std::string text = \"Learning C++ is fun\";\n",[m
+     "\n",[m
+[31m-    "# Reading from a file\n",[m
+[31m-    "with open(\"example.txt\", \"r\") as f:\n",[m
+[31m-    "    content = f.read()\n",[m
+[31m-    "    print(content)\n",[m
+[32m+[m[32m    "std::cout << \"Substring (0, 8): \" << text.substr(0, 8) << std::endl;\n",[m
+     "\n",[m
+[31m-    "# Cleanup\n",[m
+[31m-    "import os\n",[m
+[31m-    "os.remove(\"example.txt\")\n",[m
+[31m-    "print(\"File created, read, and cleaned up.\")"[m
+[32m+[m[32m    "size_t pos = text.find(\"C++\");\n",[m
+[32m+[m[32m    "if (pos != std::string::npos) {\n",[m
+[32m+[m[32m    "    std::cout << \"Found 'C++' at position: \" << pos << std::endl;\n",[m
+[32m+[m[32m    "}"[m
+    ][m
+   },[m
+   {[m
+[36m@@ -1046,21 +536,17 @@[m
+     "\n",[m
+     "| Concept | Syntax |\n",[m
+     "|---|---|\n",[m
+[31m-    "| Print | `print(\"hello\")` |\n",[m
+[31m-    "| Variable | `x = 10` |\n",[m
+[31m-    "| f-String | `f\"Value: {x}\"` |\n",[m
+[31m-    "| List | `[1, 2, 3]` |\n",[m
+[31m-    "| Dictionary | `{\"key\": \"value\"}` |\n",[m
+[31m-    "| Tuple | `(1, 2, 3)` |\n",[m
+[31m-    "| Set | `{1, 2, 3}` |\n",[m
+[31m-    "| If/Elif/Else | `if x > 0: ... elif: ... else: ...` |\n",[m
+[31m-    "| For loop | `for x in range(10): ...` |\n",[m
+[31m-    "| While loop | `while x > 0: ...` |\n",[m
+[31m-    "| Function | `def foo(a, b): return a + b` |\n",[m
+[31m-    "| Lambda | `lambda x: x * 2` |\n",[m
+[31m-    "| List Comp | `[x**2 for x in range(10)]` |\n",[m
+[31m-    "| Try/Except | `try: ... except Error: ...` |\n",[m
+[31m-    "| File I/O | `with open(\"f.txt\") as f: ...` |\n",[m
+[32m+[m[32m    "| Print output | `std::cout << \"text\" << std::endl;` |\n",[m
+[32m+[m[32m    "| Read input | `std::cin >> variable;` |\n",[m
+[32m+[m[32m    "| Declare variable | `int x = 5;` |\n",[m
+[32m+[m[32m    "| Constant | `const double PI = 3.14;` |\n",[m
+[32m+[m[32m    "| Auto type | `auto x = 42;` |\n",[m
+[32m+[m[32m    "| If statement | `if (x > 0) { ... }` |\n",[m
+[32m+[m[32m    "| For loop | `for (int i = 0; i < n; i++) { ... }` |\n",[m
+[32m+[m[32m    "| Range loop | `for (const auto& item : vec) { ... }` |\n",[m
+[32m+[m[32m    "| Function | `int add(int a, int b) { return a + b; }` |\n",[m
+[32m+[m[32m    "| Vector | `std::vector<int> v = {1, 2, 3};` |\n",[m
+[32m+[m[32m    "| String | `std::string s = \"hello\";` |\n",[m
+     "\n",[m
+     "---\n",[m
+     "\n",[m
+[36m@@ -1070,23 +556,18 @@[m
+  ],[m
+  "metadata": {[m
+   "kernelspec": {[m
+[31m-   "display_name": "Python 3 (ipykernel)",[m
+[31m-   "language": "python",[m
+[31m-   "name": "python3"[m
+[32m+[m[32m   "display_name": "C++17",[m
+[32m+[m[32m   "language": "C++17",[m
+[32m+[m[32m   "name": "xcpp17"[m
+   },[m
+   "language_info": {[m
+[31m-   "codemirror_mode": {[m
+[31m-    "name": "ipython",[m
+[31m-    "version": 3[m
+[31m-   },[m
+[31m-   "file_extension": ".py",[m
+[31m-   "mimetype": "text/x-python",[m
+[31m-   "name": "python",[m
+[31m-   "nbconvert_exporter": "python",[m
+[31m-   "pygments_lexer": "ipython3",[m
+[31m-   "version": "3.12.0"[m
+[32m+[m[32m   "codemirror_mode": "text/x-c++src",[m
+[32m+[m[32m   "file_extension": ".cpp",[m
+[32m+[m[32m   "mimetype": "text/x-c++src",[m
+[32m+[m[32m   "name": "c++",[m
+[32m+[m[32m   "version": "17"[m
+   }[m
+  },[m
+  "nbformat": 4,[m
+[31m- "nbformat_minor": 5[m
+[31m-}[m
+\ No newline at end of file[m
+[32m+[m[32m "nbformat_minor": 4[m
+[32m+[m[32m}[m
+[1mdiff --git a/Material/Learning/Jupyter - Python/README.md b/Material/Learning/Jupyter - Python/README.md[m
+[1mindex a8bbf4b..acbdc14 100644[m
+[1m--- a/Material/Learning/Jupyter - Python/README.md[m	
+[1m+++ b/Material/Learning/Jupyter - Python/README.md[m	
+[36m@@ -14,6 +14,7 @@[m [mHands-on Jupyter notebooks exploring Python fundamentals and language mechanics.[m
+ - 🔹 [**`Def.ipynb`**](Def.ipynb) — Function anatomy, parameters (`/`, `*`, `*args`, `**kwargs`), LEGB scopes, and closures.[m
+ - 🔹 [**`Returns.ipynb`**](Returns.ipynb) — Return mechanisms, `yield`, `yield from`, memory benchmarking, and async generators.[m
+ - 🔹 [**`Set.ipynb`**](Set.ipynb) — Mathematical set operations, hashability, and $O(1)$ lookups.[m
+[32m+[m[32m- 🔹 [**`SortAlgorithms.ipynb`**](SortAlgorithms.ipynb) — Masterclass on 8 Sorting Algorithms (Bubble, Selection, Insertion, Heap, Merge, Quick, Counting, Radix) + Benchmarks & Complexity.[m
+ - 🔹 [**`Treatment.ipynb`**](Treatment.ipynb) — Complete Exception Handling & Resource Treatment (`try/except/else/finally`, custom errors).[m
+ [m
+ <br/>[m
