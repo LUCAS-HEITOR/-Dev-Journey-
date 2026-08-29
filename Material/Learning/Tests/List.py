@@ -1,4 +1,4 @@
-import keyboard
+# import keyboard
 
 # frutas = [
 #     "Maçã", "Banana", "Laranja", "Morango", "Uva",
@@ -9,20 +9,23 @@ import keyboard
 
 # import random
 
-# print(random.choices(frutas, k=8))
+# print(random.sample(frutas))
+# # print(random.choices(frutas, k=8))
 
 
-def acao_ao_digitar():
-    print("Caiu No FallBack")
+# def acao_ao_digitar():
+#     print("Caiu No FallBack")
 
-def action():
-    keyboard.add_word_listener("stop", callback=acao_ao_digitar, triggers=['space', 'enter'])
-    keyboard.wait("esc")
+# def action():
+#     a = keyboard.add_word_listener("stop", callback=acao_ao_digitar, triggers=['space', 'enter'])
+#     if a == True:
 
-if __name__ == "__main__":
-    try:
-        action()
-    except Exception as e:
-        print("Erro")
-    finally:
-        print("Programa finalizado ")
+#         keyboard.wait("esc")
+
+# if __name__ == "__main__":
+#     try:
+#         action()
+#     except Exception as e:
+#         print("Erro")
+#     finally:
+#         print("Programa finalizado ")
